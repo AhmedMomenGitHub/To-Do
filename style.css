@@ -1,0 +1,210 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI';
+}
+@font-face{
+    font-family:Grotley;
+    src: url(GrotleyRegular-mLEWv.otf);
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #151617;
+  min-height: 100vh;
+
+}
+.todo{
+    background-color: #1A1B1C;
+    min-width: 250px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border: 1px solid rgb(0, 89, 255);
+    transition: 0.5s;
+    overflow-x: hidden;
+
+}
+
+h2{
+    color: rgb(72, 95, 123);
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: start;
+    font-weight: 500;
+    color: white;
+    gap: 10px;
+}
+h2 img{
+    width:35px;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #151617;
+    border-radius: 50px;
+    margin: 0px 20px;
+    max-height: 50px;
+
+
+}
+
+.text_box{
+    width: 90%;
+    height: 5vh;
+    max-height: 50px;
+    background-color: #151617;
+
+    outline: none;
+    border: none;
+    font-size: 20px;
+    margin-inline: 20px;
+    display: flex;
+    align-items: center;
+    color: white;
+    
+}
+::placeholder{
+    font-size: 20px;
+
+}
+button{
+    font-size: 30px;
+    border-radius: 50px;
+    width: 100px;
+    border: none;
+    color: white;
+    background: none;
+    cursor: pointer;
+    padding-bottom: 5px;
+    background: linear-gradient(-90deg,rgb(0, 174, 255),rgb(0, 89, 255));
+
+}
+button:hover{
+    color: white;
+    background: linear-gradient(90deg,rgb(0, 174, 255),rgb(0, 89, 255));
+
+}
+
+ul{
+    margin: 30px;
+    margin-top: 50px;
+    
+    font-size: 20px;
+    position: relative;
+    color: white;
+}
+ul li{
+    list-style: none;
+    margin-block: 30px;
+    padding: 10px;
+    padding-left: 40px;
+    /* border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px; */
+    border-radius: 20px;
+    cursor: pointer;
+    animation: move 0.5s ease;
+    transition: 0.5s ease;
+
+
+
+    
+} 
+@keyframes move{
+    from{translate: -5rem 0; opacity: 0;}
+}
+
+@keyframes moveout{
+    from{translate: 0 0; opacity: 1;}
+    to{translate: -5rem 0rem; opacity: 0;}
+}
+ul li:hover{
+    background-color: #1516176b;
+
+}
+
+li::before{
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 2px solid ;
+    translate: -25px 5px;
+    left: 8%;
+
+}
+/* 
+li::after{
+    content: '';
+    background: url(bin.png);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    translate: -25px 5px;
+} */
+ul .checked{
+    text-decoration: line-through;
+    /* background: linear-gradient(-130deg,rgb(0, 174, 255),rgb(0, 89, 255)); */
+    scale: 1.05;
+
+}
+
+ul .checked::before{
+    background: url(Microsoft_To-Do_icon.png);
+    background-position: center;
+    background-size:contain;
+    border-radius: 0%;
+     background-repeat: no-repeat;
+     border: none;
+     width: 20px;
+    height: 20px;
+}
+footer{
+    height: 5vh;
+    color: white;
+    
+    text-align: center;
+    
+
+}
+span{
+    width: 20px;
+    background: url(bin.png);
+    height: 20px;
+    background-position: center;
+    background-size: cover;
+    right:5%;
+    position: absolute;
+    cursor: pointer;
+    transition: .3s;
+}
+span:hover{
+    translate: 0 -5px;
+}
+.alerts{
+    color: white;
+    position: absolute;
+    font-size: 30px;
+    backdrop-filter: blur(8px);
+    padding: 60px 40px;
+    background-color: #0d131867;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    border:1px solid rgb(0, 89, 255);
+    border-radius: 50px;
+    scale: 0;
+    transition: 0.2s ease;
+}
+
